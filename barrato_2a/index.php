@@ -26,8 +26,8 @@
             $user = mysqli_fetch_assoc($result);
             if(password_verify($password,$user["password"])){
                 $_SESSION["user_id"] = $user["id"];
-                $_SESSION["fullname"] = $user["id"];
-                $_SESSION["role"] = $user["id"];
+                $_SESSION["fullname"] = $user["full_name"];
+                $_SESSION["role"] = $user["role"];
 
                 if($user["role"] == "admin"){
                     header("Location: admin/dashboard.php");
